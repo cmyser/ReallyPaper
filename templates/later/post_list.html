@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{%  block content %}
+
+
+
+
+            {% for pst in post_list %}
+
+                <div class="card">
+                    <div class="front"><div class="imgfon">{{ pst.description }}</div></div>
+                    <div class="back"><span><a href="{{ pst.get_absolute_url }}">{{ pst.title }}</a> </span></div>
+                </div>
+              
+
+            {% empty %}
+                <li>No articles yet.</li>
+            {% endfor %}
+
+
+
+
+
+
+{% endblock content %}

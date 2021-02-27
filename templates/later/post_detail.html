@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+    <p><a href="{% url 'post-up' post.url %}">!!!!!!!!!update!!!!</a></p>
+    <p><a href="{% url 'post-delete' post.url %}">aaaaaaaaaaaaaa</a></p>
+
+
+
+    <div class="data">
+        <h1>{{ post.title }}</h1>
+        <h2>{{ post.description }}</h2>
+        <h2>{{ post.text }}</h2>
+        <h2>{{ post.dara }}</h2>
+    </div>
+
+
+{% endblock content %}

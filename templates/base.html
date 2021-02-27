@@ -1,0 +1,39 @@
+{% load i18n %}
+{% load account %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" /></head>
+<body>
+
+        <div class="nav-right">
+
+            <p><a href="{% url 'post-list' %}">all</a></p>
+        </div>
+
+        <div class="main">
+            {% if user.is_authenticated %}
+            <p>Hi {{ user.username }}!</p>
+            <p><a href="{% url 'account_logout' %}">Log out</a></p>   <a href="{% url 'post_new' %}">+ New Blog Post</a>
+
+        {% else %}
+            <p><a href="{% url 'account_login' %}">Login</a></p>
+        {% endif %}
+        </div>
+
+        <div class="wrapper">
+
+                {%block content %}
+                {% endblock %}
+
+        </div>
+        <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>  <!-- JQUERY HERE -->
+    {% block javascript %}
+    {% endblock %}
+
+    <script src="{% static 'js/min.js' %}"></script>
+</body>
+</html>
